@@ -16,9 +16,10 @@ import com.example.android.rocksausec2.R;
 import com.example.android.rocksausec2.model.Data_;
 import com.koushikdutta.ion.Ion;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder>{
+public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
     private static int SCREEN_WIDTH_SLICE_TO_USE = 3;
     private static int POST_ANIMATION_DURATION = 800;
@@ -34,7 +35,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
     List<NetworkCall> mPosts;
     int mDistanceToMovePostX = 0;
 
-    public CategoriesAdapter(List<NetworkCall> posts, PostsAdapterListener listener) {
+    public PostsAdapter(ArrayList<Data_> posts, PostsAdapterListener listener) {
 
         mPosts = posts;
         mListener = listener;
@@ -52,7 +53,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
     }
 
     @Override
-    public CategoriesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PostsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         mContext = parent.getContext();
 
@@ -66,7 +67,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(CategoriesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(PostsAdapter.ViewHolder holder, int position) {
 
         if(mPosts == null || mPosts.isEmpty())
             return;
