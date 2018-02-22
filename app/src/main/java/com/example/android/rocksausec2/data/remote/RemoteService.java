@@ -1,5 +1,7 @@
 package com.example.android.rocksausec2.data.remote;
 
+import com.example.android.rocksausec2.model.Data_;
+
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -11,7 +13,7 @@ import retrofit2.http.Query;
 public interface RemoteService {
 
     @GET("search")
-    Observable<Response> getRecipes(
+    Observable<Data_> getData(
             @Query("q") String query
             , @Query("from") String from
             , @Query("to") String to

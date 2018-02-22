@@ -1,6 +1,7 @@
 package com.example.android.rocksausec2.view;
 
 
+import com.example.android.rocksausec2.model.Data_;
 import com.example.android.rocksausec2.model.Example;
 
 import okhttp3.OkHttpClient;
@@ -11,7 +12,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
-public class NetworkCall {
+public class NetworkCall extends Data_ {
 
     public static final String BASE_SCHEMA_WND = "http";
     public static final String BASE_URL = "http://www.reddit.com/";

@@ -2,6 +2,8 @@ package com.example.android.rocksausec2.data.remote;
 
 import android.content.Context;
 
+import com.example.android.rocksausec2.model.Data_;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -60,10 +62,12 @@ public class RemoteDataSource {
 
     }
 
-    public Observable<Response> getResponse(String query, String from, String to){
+    //place holder, not sure I need this...
+
+    public Observable<Data_> getData(String query, String from, String to){
         Retrofit retrofit = create();
         RemoteService remoteService = retrofit.create(RemoteService.class);
-        return remoteService.getRecipes(query, from, to, APP_ID, APP_KEY);
+        return remoteService.getData(query, from, to, APP_ID, APP_KEY);
 
     }
 }
